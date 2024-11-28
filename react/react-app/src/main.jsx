@@ -31,7 +31,10 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* TODO: 2. Providing the context to the component. */}
     <AppProvider>
+      {/* Comment it for react-query */}
       <RouterProvider router={router} />
+
+      {/* Uncomment it for react-query */}
       {/* <App /> */}
     </AppProvider>
   </StrictMode>,

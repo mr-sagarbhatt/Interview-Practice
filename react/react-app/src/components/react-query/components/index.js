@@ -1,0 +1,6 @@
+export { default as Home } from './Home'
+export { default as PostsTraditionalWay } from './PostsTraditionalWay'
+export { default as PostsRQ } from './PostsRQ'
+export { default as PostDetailsRQ } from './PostDetailsRQ'
+export { default as PaginatedQueries } from './PaginatedQueries'
+export { default as InfiniteQueries } from './InfiniteQueries'

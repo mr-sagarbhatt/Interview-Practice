@@ -10,10 +10,20 @@ import {
   LifeCycleMethods,
   ErrorBoundary,
   Portal,
+  ReactRedux,
+  ReduxToolkit,
+  ECommerce,
+  ReactQuery,
+  Axios,
 } from './components'
 import Logout from './components/Router/Logout'
 import { useAppContext } from './context/AppContext'
+import { bankStore } from './components/react-redux/store/bank-store'
+import { rtkBankStore } from './components/reduxjs-toolkit/store/bank-store'
+import { eCommerceStore } from './components/rtk-ecommerce/app/store'
+
 const LazyCodeSplitComponent = lazy(() => import('./components/code-splitting/CodeSplitComponent'))
+import { Provider } from 'react-redux'
 
 // ! Code splitting of a function - Not recommended
 console.log(codeSplitFunctionToSplit(10, 20))
@@ -40,45 +50,60 @@ function App() {
 
   return (
     <>
-      <Logout></Logout>
+      {/* <Logout></Logout> */}
       {/* Code Splitting */}
       <>
         {/* * Without code Splitting */}
-        <WithoutCodeSplitComponent></WithoutCodeSplitComponent>
+        {/* <WithoutCodeSplitComponent></WithoutCodeSplitComponent> */}
         {/* * With code Splitting - But we can not call it directly we need to wrap it with the Suspense*/}
         {/* <LazyCodeSplitComponent></LazyCodeSplitComponent> */}
-        <Suspense fallback={<div>Loading...</div>}>
+        {/* <Suspense fallback={<div>Loading...</div>}>
           <LazyCodeSplitComponent></LazyCodeSplitComponent>
-        </Suspense>
+        </Suspense> */}
       </>
       {/* JSX and create element */}
       <>
-        <JSX byUsing="JSX."></JSX>
-        <CreateElement byUsing="React.createElement."></CreateElement>
+        {/* <JSX byUsing="JSX."></JSX>
+        <CreateElement byUsing="React.createElement."></CreateElement> */}
       </>
       {/* Hooks */}
-      <>
-        <Hooks></Hooks>
-      </>
+      <>{/* <Hooks></Hooks> */}</>
       {/* HOC */}
-      <>
-        <HOC></HOC>
-      </>
+      <>{/* <HOC></HOC> */}</>
       {/* Recursion */}
-      <>
-        <Recursion></Recursion>
-      </>
+      <>{/* <Recursion></Recursion> */}</>
       {/* Life cycle methods */}
-      <>
-        <LifeCycleMethods></LifeCycleMethods>
-      </>
+      <>{/* <LifeCycleMethods></LifeCycleMethods> */}</>
       {/* ErrorBoundary */}
-      <>
-        <ErrorBoundary></ErrorBoundary>
-      </>
+      <>{/* <ErrorBoundary></ErrorBoundary> */}</>
       {/* Portal */}
+      <>{/* <Portal></Portal> */}</>
+      {/* React Redux */}
       <>
-        <Portal></Portal>
+        {/* <Provider store={bankStore}>
+          <ReactRedux></ReactRedux>
+        </Provider> */}
+      </>
+      {/* Redux Toolkit */}
+      <>
+        {/* React Redux */}
+        {/* <Provider store={rtkBankStore}>
+          <ReduxToolkit></ReduxToolkit>
+        </Provider> */}
+      </>
+      <>
+        {/* React Redux */}
+        {/* <Provider store={eCommerceStore}>
+          <ECommerce></ECommerce>
+        </Provider> */}
+      </>
+      <>
+        {/* ReactQuery */}
+        {/* <ReactQuery></ReactQuery> */}
+      </>
+      <>
+        {/* axios */}
+        <Axios></Axios>
       </>
     </>
   )

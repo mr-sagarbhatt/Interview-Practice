@@ -51,7 +51,7 @@ Call stack known as Execution Context Stack, Program Stack, Control Stack, Runti
 
 Execution context creation phase scan all the variables and assign a undefined to it and for function it assigns whole function is called hoisting
 or
-Hoisting is a mechanism in JavaScript where variables and functions are moved to the top of their scope before
+Hoisting is a mechanism in JavaScript where variables and functions are moved to the top of their scope before.
 arrow functions are treated as variable when they hoisted.
 
 ### JS engine always create an execution context along with some of the objects like window object (called global object), this object whenever we run any JS file whether the file is empty or it has some content.
