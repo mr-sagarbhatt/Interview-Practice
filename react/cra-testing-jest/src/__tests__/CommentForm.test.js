@@ -10,9 +10,12 @@ describe(`Test cases related to comment button`, () => {
     const commentBox = screen.getByRole('textbox')
     expect(commentBox).toBeInTheDocument()
 
+    // * Matching a string:
     const checkBox = screen.getByLabelText('I agree to terms and conditions', { exact: false })
-    // ? or using regex
+    // * Matching a regex:
     const checkBox2 = screen.getByLabelText(/I agree to terms and conditions/i)
+    // * Matching with a custom function:
+    const checkBox3 = screen.getByLabelText((content, element) => content.startsWith('I agree to terms and conditions'))
     expect(checkBox).toBeInTheDocument()
 
     const submitButton = screen.getByRole('button', { name: 'comment', exact: false })
@@ -26,9 +29,9 @@ describe(`Test cases related to comment button`, () => {
     const checkBox = screen.getByLabelText(/I agree to terms and conditions/i)
     const submitButton = screen.getByRole('button', /comment/i)
 
-    // TODO: Simulating user actions: 2 ways
-    // ? 1. Using fireEvent of @testing-library/react
-    // ? 2. Using userEvent of @testing-library/user-event - here we have to add await before using its methods
+    // TODO: There are 2 ways to Simulating user actions.
+    // ? 1. Using fireEvent of @testing-library/react - it is synchronous
+    // ? 2. Using userEvent of @testing-library/user-event - it is asynchronous so we have to add await before using its methods
 
     // ? 1. Using fireEvent of @testing-library/react
     // * Write something in comment box

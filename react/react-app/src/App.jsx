@@ -15,6 +15,7 @@ import {
   ECommerce,
   ReactQuery,
   Axios,
+  Testing,
 } from './components'
 import Logout from './components/Router/Logout'
 import { useAppContext } from './context/AppContext'
@@ -103,7 +104,11 @@ function App() {
       </>
       <>
         {/* axios */}
-        <Axios></Axios>
+        {/* <Axios></Axios> */}
+      </>
+      <>
+        {/* React Testing Libraries */}
+        <Testing></Testing>
       </>
     </>
   )

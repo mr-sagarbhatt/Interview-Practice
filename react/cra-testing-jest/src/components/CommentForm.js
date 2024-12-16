@@ -4,13 +4,13 @@ const CommentForm = ({ setComments }) => {
   const [text, setText] = useState('')
   const [checked, setChecked] = useState(false)
 
-  // const addComments = ()=>{
-  //   setComments((prev)=>[...prev,{id:Date.now(),text:text}])
-  //   setText("")
-  // }
+  const addComments = () => {
+    setComments((prev) => [...prev, { id: Date.now(), text: text }])
+    setText('')
+  }
 
   const postComment = async () => {
-    const res = await fetch('http://localhost:5000/addcomment', {
+    const res = await fetch('http://localhost:3005/addcomment', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +30,15 @@ const CommentForm = ({ setComments }) => {
       <input placeholder="write your comment here" value={text} onChange={(e) => setText(e.target.value)} />
       <input type="checkbox" id="checkbox" defaultChecked={checked} onChange={() => setChecked(!checked)} />
       <label htmlFor="checkbox">I agree to terms and conditions</label>
-      <button disabled={!checked || !text} onClick={postComment}>
+      <button
+        disabled={!checked || !text}
+        onClick={() => {
+          // TODO: Without mock APIs.
+          // addComments()
+          // TODO: For mock APIs.
+          postComment()
+        }}
+      >
         comment
       </button>
     </div>
